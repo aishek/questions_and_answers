@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:12.0-alpine
+    container_name: question_and_answers_postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ../log:/root/log:cached
+    ports:
+      - '5432:5432'
+
+volumes:
+  postgres:
+    name: question_and_answers_volume_postgres
